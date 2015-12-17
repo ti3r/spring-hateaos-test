@@ -3,7 +3,8 @@ buildscript {
         springBootVersion = '1.3.0.RELEASE'
     }
     repositories {
-        mavenCentral()
+		mavenCentral()
+		jcenter()
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
@@ -24,6 +25,7 @@ targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
+	jcenter()
 }
 
 
@@ -31,6 +33,8 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-hateoas')
     compile('org.springframework.boot:spring-boot-starter-jersey')
     compile('org.springframework.boot:spring-boot-starter-web')
+	compile('com.mangofactory:swagger-springmvc:1.0.2')
+	compile('org.ajar:swagger-spring-mvc-ui:0.4')
     testCompile('org.springframework.boot:spring-boot-starter-test') 
 }
 
