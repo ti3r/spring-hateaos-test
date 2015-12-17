@@ -16,3 +16,13 @@ If you want to know more about [HATEOAS](https://en.wikipedia.org/wiki/HATEOAS) 
 This is a simple gradle - spring-boot application with rest and hateoas capabilities enabled. To run it
 just execute the command `gradle bootRun` in your project and visit the url 
 [http://localhosst:8080/accounts](http://localhosst:8080/accounts)
+
+
+
+#### Swagger
+Swagger configuration has been added to this project in order to document the restful api using swagger-spring-mvc.
+Also swagger-spring-mvc-ui has been added in order to display the swagger ui application for this application.
+In order to access the swagger ui application visit the url [http://localhost:8080/sdoc.jsp](http://localhost:8080/sdoc.jsp).
+The api-docs will be served from [http://localhost:8080/api-docs](http://localhost:8080/api-docs).
+
+
