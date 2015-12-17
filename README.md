@@ -15,7 +15,7 @@ If you want to know more about [HATEOAS](https://en.wikipedia.org/wiki/HATEOAS) 
 #### Explanation
 This is a simple gradle - spring-boot application with rest and hateoas capabilities enabled. To run it
 just execute the command `gradle bootRun` in your project and visit the url 
-[http://localhost:8080/accounts](http://localhost:8080/accounts)
+[http://localhost:8080/accounts/list](http://localhost:8080/accounts/list)
 
 
 #### Swagger

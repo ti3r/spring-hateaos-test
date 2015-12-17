@@ -51,8 +51,8 @@ public class AccountResource {
 	/* Request methods */
 	
 	
-	@ApiOperation(value="Retrieve the list of accounts available in the system",httpMethod="GET")
-	@RequestMapping(method=GET)
+	@ApiOperation(value="Retrieve the list of accounts available in the system",httpMethod="GET", position=0)
+	@RequestMapping(method=GET,path="/list")
 	public ResponseEntity<AccountList> list(){
 		List<Account> accs = accounts.entrySet().stream().map(entry->{return entry.getValue();})
 		.collect(Collectors.toList());
@@ -65,7 +65,7 @@ public class AccountResource {
 		return ResponseEntity.ok(list);
 	}
 	
-	@ApiOperation(value="Create a new account in the system",httpMethod="POST")
+	@ApiOperation(value="Create a new account in the system",httpMethod="POST", position=1)
 	@RequestMapping(path="/create", method=POST)
 	public ResponseEntity<Account> createAccount(
 		@ApiParam(name="holder", value="The name of the account holder") 
@@ -81,7 +81,7 @@ public class AccountResource {
 		return ResponseEntity.ok(a);
 	}
 	
-	@ApiOperation(value="Add founds to one account",httpMethod="POST")
+	@ApiOperation(value="Add founds to one account",httpMethod="POST",position=4)
 	@RequestMapping(path="/{accNumber}/deposit", method=POST, consumes=TEXT_PLAIN_VALUE)
 	public ResponseEntity<Account> deposit(
 			@ApiParam(name="accNumber", value="The account number where the deposit should happen")
@@ -97,7 +97,7 @@ public class AccountResource {
 				).orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
 	}
 	
-	@ApiOperation(value="Remove founds from one account",httpMethod="POST")
+	@ApiOperation(value="Remove founds from one account",httpMethod="POST",position=5)
 	@RequestMapping(path="/{accNumber}/withdrawal", method = POST, consumes=TEXT_PLAIN_VALUE)
 	public ResponseEntity<Account> withdrawal(
 			@ApiParam(name="accNumber", value="The account number where the deposit should happen")
@@ -113,7 +113,7 @@ public class AccountResource {
 		).orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
 	}
 	
-	@ApiOperation(value="Retrieves the details of one account",httpMethod="GET")
+	@ApiOperation(value="Retrieves the details of one account",httpMethod="GET", position=3)
 	@RequestMapping(path="/{accNumber}", method=GET)
 	public ResponseEntity<Account> getAccount(
 			@ApiParam(name="accNumber", value="The account number to retrieve")
