@@ -1,0 +1,9 @@
+---
+applications:
+- name: spring-hateoas-swagger-test
+  memory: 512M
+  host: spring-hateoas-swagger
+  path: build/libs/spring-rest-hateoas-test-0.0.1-SNAPSHOT.jar
+  buildpack: java_buildpack
+  env:
+    SPRING_PROFILES_ACTIVE : cloud
